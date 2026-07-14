@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- macOS (launchd). Автозапуск Funpay Stars.
+     1) Поправьте WorkingDirectory и путь к python под себя.
+     2) cp deploy/com.funpaystars.bot.plist ~/Library/LaunchAgents/
+     3) launchctl load ~/Library/LaunchAgents/com.funpaystars.bot.plist
+        Остановить: launchctl unload ~/Library/LaunchAgents/com.funpaystars.bot.plist -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.funpaystars.bot</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>bot_fragment.py</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/YOU/funpay-stars-bot</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/tmp/funpay-stars.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/funpay-stars.err.log</string>
+</dict>
+</plist>

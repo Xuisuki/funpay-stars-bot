@@ -1,0 +1,22 @@
+# Linux (systemd). Пример автозапуска Funpay Stars как фонового сервиса.
+# 1) Положите проект в /opt/funpay-stars-bot (или свой путь), заполните .env (chmod 600 .env)
+# 2) sudo cp deploy/funpay-stars.service /etc/systemd/system/
+#    (поправьте User/WorkingDirectory/ExecStart под себя)
+# 3) sudo systemctl daemon-reload && sudo systemctl enable --now funpay-stars
+#    Логи: journalctl -u funpay-stars -f
+
+[Unit]
+Description=Funpay Stars - Telegram Stars autoseller (FunPay -> Fragment)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=funpay
+WorkingDirectory=/opt/funpay-stars-bot
+ExecStart=/usr/bin/python3 bot_fragment.py
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

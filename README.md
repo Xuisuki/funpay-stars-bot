@@ -95,6 +95,37 @@ python bot_fragment.py       # запуск
 Пока не заполнили Fragment — держите `DRY_RUN=true`: бот работает по FunPay-части без
 реальной траты звёзд.
 
+> Скачать можно через `git clone` или архивом со страницы
+> [**Releases**](https://github.com/Xuisuki/funpay-stars-bot/releases).
+
+## Запуск 24/7 (демоном)
+
+Бот на чистом Python и работает одинаково на **Linux, macOS и Windows**. Для боевого
+режима держите его запущенным постоянно — готовые примеры в [`deploy/`](deploy/):
+
+**Linux (systemd)**
+```bash
+sudo cp deploy/funpay-stars.service /etc/systemd/system/   # поправьте пути в файле
+sudo systemctl enable --now funpay-stars
+journalctl -u funpay-stars -f
+```
+
+**macOS (launchd)**
+```bash
+cp deploy/com.funpaystars.bot.plist ~/Library/LaunchAgents/   # поправьте WorkingDirectory
+launchctl load ~/Library/LaunchAgents/com.funpaystars.bot.plist
+```
+
+**Windows (Планировщик задач)**
+```powershell
+# PowerShell от администратора, из папки проекта (поправьте путь к python внутри):
+.\deploy\windows_task.ps1
+Start-ScheduledTask -TaskName FunpayStarsBot
+```
+
+Держите **один экземпляр** на аккаунт FunPay. Реестр `orders.db` переживает рестарты:
+незавершённые заказы после перезапуска уходят на ручную проверку.
+
 ## Конфигурация
 
 Все переменные — в `.env` (см. [`.env.example`](.env.example)). Ключевые:

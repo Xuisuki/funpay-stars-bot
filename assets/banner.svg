@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0c13"/>
+      <stop offset="1" stop-color="#12152a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="0.55" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="440" fill="url(#bg)"/>
+  <ellipse cx="1050" cy="150" rx="430" ry="360" fill="url(#glow)"/>
+
+  <!-- constellation dots -->
+  <g fill="#6ee7ff" opacity="0.5">
+    <circle cx="700" cy="360" r="2"/><circle cx="640" cy="300" r="1.6"/>
+    <circle cx="1240" cy="360" r="2.2"/><circle cx="590" cy="120" r="1.6"/>
+    <circle cx="700" cy="70" r="1.8"/>
+  </g>
+
+  <!-- ===== left block ===== -->
+  <!-- logo mark -->
+  <circle cx="112" cy="165" r="32" fill="none" stroke="url(#accent)" stroke-width="3"/>
+  <path d="M112 148 l6.4 13 14.3 2 -10.3 10.1 2.4 14.2 -12.8 -6.7 -12.8 6.7 2.4 -14.2 -10.3 -10.1 14.3 -2 z"
+        fill="url(#accent)"/>
+
+  <text x="166" y="188" font-family="DejaVu Sans, sans-serif" font-size="64" font-weight="bold">
+    <tspan fill="#eef2fb">Funpay </tspan><tspan fill="url(#accent)">Stars</tspan>
+  </text>
+  <text x="168" y="238" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#98a2bd">Автопродажа звёзд Telegram на FunPay.</text>
+  <text x="169" y="284" font-family="DejaVu Sans Mono, monospace" font-size="19" fill="#5f6a86" letter-spacing="1">money-safe  ·  self-hosted  ·  idempotent</text>
+
+  <!-- ===== right terminal ===== -->
+  <g>
+    <rect x="760" y="96" width="430" height="282" rx="14" fill="#0e111b" stroke="#232b42" stroke-width="1.5"/>
+    <path d="M760 110 a14 14 0 0 1 14 -14 h402 a14 14 0 0 1 14 14 v28 h-430 z" fill="#151a28"/>
+    <circle cx="786" cy="117" r="6" fill="#ff5f57"/>
+    <circle cx="808" cy="117" r="6" fill="#febc2e"/>
+    <circle cx="830" cy="117" r="6" fill="#28c840"/>
+    <text x="985" y="123" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="17" fill="#7f889f">funpay-stars — run</text>
+
+    <g font-family="DejaVu Sans Mono, monospace" font-size="20">
+      <text x="784" y="190"><tspan fill="#28c840">$ </tspan><tspan fill="#e6e9f2">python bot_fragment.py</tspan></text>
+      <text x="784" y="234"><tspan fill="#6b7594">→ new order </tspan><tspan fill="#8b93a7">#JD4E · </tspan><tspan fill="#febc2e">50★ </tspan><tspan fill="#38bdf8">@user</tspan></text>
+      <text x="784" y="278"><tspan fill="#28c840">✓ </tspan><tspan fill="#a6e3a1">delivered 50★</tspan><tspan fill="#6b7594"> · tx c7d880</tspan></text>
+      <text x="784" y="322"><tspan fill="#22d3ee">↗ </tspan><tspan fill="#8b93a7">ledger </tspan><tspan fill="#28c840">DELIVERED</tspan><tspan fill="#6b7594"> · audit ok</tspan></text>
+    </g>
+  </g>
+</svg>
