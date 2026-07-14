@@ -1,0 +1,12 @@
+# --- наш код ---
+requests>=2.31.0
+python-dotenv>=1.0.1
+rich>=13.7,<14
+colorama>=0.4.6
+# --- вендорный FunPayAPI ---
+beautifulsoup4>=4.11.1
+lxml>=5.0
+requests_toolbelt>=1.0.0
+# --- вендорный PyFragment (self-hosted Fragment; аудит bohd4nx/FragmentAPI @3d0cf38) ---
+httpx>=0.25
+tonutils>=2.0.1

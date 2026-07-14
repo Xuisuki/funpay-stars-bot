@@ -1,0 +1,18 @@
+# --- секреты: НИКОГДА не коммитить ---
+.env
+auth_token.json
+
+# --- рантайм-данные заказов и логи ---
+orders.db
+orders.db-wal
+orders.db-shm
+stats.json
+rewards.json
+log.txt
+money_audit.log
+backup_env/
+
+# --- питон ---
+__pycache__/
+*.pyc
+.pytest_cache/
