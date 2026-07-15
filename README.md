@@ -77,13 +77,28 @@ flowchart TD
 
 ## Установка
 
+**Быстрый старт — одной командой.** Установщик проверит Python, создаст виртуальное окружение,
+поставит зависимости и запустит интерактивный мастер: он спросит все данные (golden_key, Fragment,
+Telegram) и подскажет, **где что взять** — руками ничего править не нужно.
+
 ```bash
 git clone https://github.com/Xuisuki/funpay-stars-bot.git
 cd funpay-stars-bot
+./install.sh                 # Linux / macOS   (или: bash install.sh)
+```
+
+На **Windows**: двойной клик по `install.bat`, либо `./install.ps1` в PowerShell.
+После установки запуск: `./run.sh` (Windows: `run.ps1`). Перенастроить позже — снова
+`python first_start.py`.
+
+<details><summary>Настроить вручную</summary>
+
+```bash
 pip install -r requirements.txt
 python first_start.py        # мастер настройки (создаёт .env)
 python bot_fragment.py       # запуск
 ```
+</details>
 
 Для боевого режима нужны:
 
@@ -181,10 +196,10 @@ pytest -q tests/       # 48 тестов: реестр, парсинг, пейс
 [PyFragment](https://github.com/bohd4nx/FragmentAPI) (`@3d0cf38`) для работы с Fragment.
 Спасибо их авторам. Основной код проекта — под MIT (см. [LICENSE](LICENSE)).
 
-## Автор
+## Авторы
 
-Проект **[ProdX](https://prodx.pro)** · разработчик **[@Xuisuki](https://t.me/Xuisuki)**
-· [github.com/Xuisuki](https://github.com/Xuisuki)
+Проект **[ProdX](https://prodx.pro)** · разработчики **[@Xuisuki](https://github.com/Xuisuki)**
+· **[@mawlikow](https://github.com/mawlikow)**
 
 Вопросы и предложения — [Issues](https://github.com/Xuisuki/funpay-stars-bot/issues)
 или в Telegram.
@@ -212,9 +227,11 @@ configurable operator brand.
 
 ```bash
 git clone https://github.com/Xuisuki/funpay-stars-bot.git
-cd funpay-stars-bot && pip install -r requirements.txt
-python first_start.py && python bot_fragment.py
+cd funpay-stars-bot
+./install.sh                 # Linux / macOS (Windows: install.bat)
 ```
 
-Keep `DRY_RUN=true` until Fragment credentials are set. Made by
-[ProdX](https://prodx.pro) · dev [@Xuisuki](https://github.com/Xuisuki) · MIT License.
+The installer sets up a virtualenv, installs dependencies and runs an interactive wizard that
+asks for every value and tells you where to get it. Start the bot with `./run.sh`. Keep
+`DRY_RUN=true` until Fragment credentials are set. Made by
+[ProdX](https://prodx.pro) · dev [@Xuisuki](https://github.com/Xuisuki) · [@mawlikow](https://github.com/mawlikow) · MIT License.

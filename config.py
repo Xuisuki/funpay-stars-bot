@@ -5,7 +5,7 @@ config.py — единый источник конфигурации Funpay-Tele
     python first_start.py
 
 Проект: ProdX (https://prodx.pro)
-Разработчик: Xuisuki — Telegram @Xuisuki, https://github.com/Xuisuki
+Разработчики: Xuisuki (@Xuisuki, github.com/Xuisuki) + mawlikow (@mawlikow, github.com/mawlikow)
 """
 import os
 from dotenv import load_dotenv
@@ -17,6 +17,8 @@ CREATOR = "ProdX"
 CREATOR_URL = "https://prodx.pro"
 DEV_TELEGRAM = "@Xuisuki"
 DEV_GITHUB = "https://github.com/Xuisuki"
+DEV2_TELEGRAM = "@mawlikow"
+DEV2_GITHUB = "https://github.com/mawlikow"
 
 
 def _b(name: str, default: bool = False) -> bool:

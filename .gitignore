@@ -12,6 +12,10 @@ log.txt
 money_audit.log
 backup_env/
 
+# --- окружение установщика ---
+.venv/
+venv/
+
 # --- питон ---
 __pycache__/
 *.pyc
